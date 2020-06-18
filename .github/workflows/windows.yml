@@ -3,9 +3,7 @@ on: push
 
 jobs:
     build:
-        runs-on: windows-latest
+        runs-on: macos-latest
         steps:
-            - shell: powershell
-              run: |
-                get-wmiobject win32_processor | select-object NumberOfCores, NumberOfLogicalProcessors
-                (Get-CimInstance Win32_PhysicalMemory | Measure-Object -Property capacity -Sum).sum /1gb
+            - run: |
+                sysctl -n hw
