@@ -1,9 +1,0 @@
-name: Build
-on: push
-
-jobs:
-    build:
-        runs-on: macos-latest
-        steps:
-            - run: |
-                system_profiler SPHardwareDataType
