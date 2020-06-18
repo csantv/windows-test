@@ -6,4 +6,4 @@ jobs:
         runs-on: macos-latest
         steps:
             - run: |
-                sysctl -n hw
+                system_profiler SPHardwareDataType
