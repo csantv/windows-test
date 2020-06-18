@@ -6,4 +6,6 @@ jobs:
         runs-on: windows-latest
         steps:
             - shell: powershell
-              run: Get-ComputerInfo
+              run: |
+                get-wmiobject win32_processor | select-object NumberOfCores, NumberOfLogicalProcessors
+                (Get-CimInstance Win32_PhysicalMemory | Measure-Object -Property capacity -Sum).sum /1gb
