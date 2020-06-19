@@ -12,6 +12,8 @@ jobs:
               with:
                 repository: corpnewt/gibMacOS
             - run: |
-                  ls -a
                   ls ..
-                  ls gibMacOS
+                  echo "==="
+                  ls -a
+                  echo "==="
+                  pwd
