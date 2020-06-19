@@ -7,13 +7,8 @@ jobs:
         steps:
             - name: checkout
               uses: actions/checkout@v2
-            - name: checkout
-              uses: actions/checkout@v2
               with:
                 repository: corpnewt/gibMacOS
             - run: |
-                  ls ..
-                  echo "==="
-                  ls -a
-                  echo "==="
-                  pwd
+                  python3 gibMacOS.command --latest
+                  python3 BuildmacOSInstallApp.command << $(find 'macOS Downloads' -type d | tail -1)
